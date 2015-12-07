@@ -5,8 +5,8 @@ db:
     environment:
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: project
-        MYSQL_USER: root
-        MYSQL_PASSWORD: root
+        MYSQL_USER: username
+        MYSQL_PASSWORD: password
 php:
     image: claudioflagbit/docker-php
     expose:
@@ -14,7 +14,7 @@ php:
     links:
         - db
     volumes:
-        - src:/var/www/html
+        - ./src:/var/www/html
     tty: true
 apache:
     image: claudioflagbit/docker-apache
